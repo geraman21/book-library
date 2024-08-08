@@ -2,14 +2,12 @@
 
 Consists of two pages: Home Page and Front Desk.
 
-On Home Page Please display a list of books, which you can fetch from this API: https://63c10327716562671870f959.mockapi.io/books
+On Home Page Please display a list of books, which you can fetch from this API: https://63c10327716562671870f959.mockapi.io/books . I want the books to be categorized by the year spans in which they were published. The year spans should be divided into 10-year intervals, starting from the year of the most recently published book and ending with the oldest published book. If no books were published within a specific 10-year range, "No publications" should be displayed for that range. If no books were published within consecutive 10-year ranges, combine those ranges and display "No publications" for that combined range.
 
-On Front Desk page, you need to add a form that will allow us to add a book. This book should be then appended to the list of books displayed on the homepage. New books should be displayed first.
-
+On Front Desk page, you need to add a form that will allow us to add a book. This book should be then appended to the list of books displayed on the homepage, which was initially populated from the provided endpoint. New books should be displayed first. Every field in the Book interface are mandatory except ratings, which can be left as an empty array.
 
 Considerations:
-No need to persists books in browser storage.
-
+Do not persist books in local or session storage.
 
 ## Recommended IDE Setup
 

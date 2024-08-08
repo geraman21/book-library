@@ -1,34 +1,23 @@
 <template>
   <div class="book-tile">
     <p class="book-title">{{ book.name }}</p>
-    <p>Author: {{ book.author }}</p>
-    <p>Category: {{ book.category }}</p>
-    <p>Ratings:</p>
-    <ul>
+    <p><b>Author:</b> {{ book.author }}</p>
+    <p><b>Category:</b> {{ book.category }}</p>
+    <p><b>Ratings:</b></p>
+    <p v-if="book.ratings.length === 0"> - Not rated</p>
+    <ul v-else>
       <li v-for="rating in book.ratings" :key="rating.source">
-        {{ rating.source }}: {{ rating.value }}
+      <i>{{ rating.source || 'Incognito' }}:</i> {{ rating.value }}
       </li>
     </ul>
-    <p>Publish Year: {{ book.publishYear }}</p>
+    <p><b>Publish Year:</b> {{ book.publishYear }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { Book } from '@/types/book';
 import type { PropType } from 'vue';
 
-
-type Rating = {
-  source: string;
-  value: number;
-};
-
-type Book = {
-  name: string;
-  author: string;
-  category: string;
-  ratings: Array<Rating>;
-  publishYear: number;
-};
 
 defineProps({
   book: {
