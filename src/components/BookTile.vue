@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Book } from '@/types/book';
+import type { Book } from '@/types';
 import type { PropType } from 'vue';
 
 
